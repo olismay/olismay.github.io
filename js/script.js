@@ -26,7 +26,6 @@ selectCurrencyBonus.addEventListener('click', showItemsWithPriceBonus);
 
 function selectChoose() {
   let text = this.innerHTML;
-  console.log(text);
   
   let filteredCardsBySubject = itemsCards.filter( (item) => {   
     if(item.subject.toString().includes(text) || item.genre.toString().includes(text) || item.grade.toString().includes(text)) {
@@ -58,8 +57,7 @@ const getItemsPrice = async () => {
                       }})                     
     priceValues = await response.json();   
     price = priceValues.items.price;
-    showItems(itemsCards);
-    console.log(itemsCards);    
+    showItems(itemsCards); 
 
   } catch (err) {
     console.error(err);
@@ -87,7 +85,7 @@ const getItems = async () => {
     itemsValues = await response.json();   
     itemsCards = itemsValues.items;
     showItems(itemsCards);
-    console.log(itemsCards);    
+    
 }  catch (err) {
     console.error(err);
 }  
